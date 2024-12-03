@@ -2,7 +2,11 @@ name: Esto es una demo
 on: [push]
 
 jobs:
- simple:
-   runs-on: ubuntu-latest
-     steps:
-       - run: echo "Hola mundo"
+  simple:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hola mundo"
+        name: Hola mundo
+      - name: Adios
+        run: echo "Adios"
+      - run: echo "..."

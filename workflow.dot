@@ -1,0 +1,16 @@
+digraph workflow {
+    A [label="Push to main"];
+    B [label="Build"];
+    C [label="Success?"];
+    D [label="Run Tests"];
+    E [label="Notify Error"];
+    F [label="Tests Success?"];
+    G [label="Deploy to Production"];
+
+    A -> B -> C;
+    C -> D [label="Yes"];
+    C -> E [label="No"];
+    D -> F;
+    F -> G [label="Yes"];
+    F -> E [label="No"];
+}
